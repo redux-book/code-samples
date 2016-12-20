@@ -1,0 +1,57 @@
+{
+  "name": "redux-book-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "webpack-dev-server --hot --progress",
+    "build": "NODE_ENV=production node node_modules/webpack/bin/webpack.js -p --progress",
+    "test": "jest",
+    "test:watch": "npm test -- --watch"
+  },
+  "author": "Boris Dinkevich",
+  "license": "Proprietary",
+  "dependencies": {
+    "deep-freeze": "0.0.1",
+    "redux": "3.5.2",
+    "redux-actions": "0.10.1",
+    "redux-thunk": "2.1.0",
+    "whatwg-fetch": "1.0.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "6.3.3",
+    "babel-core": "6.4.5",
+    "babel-jest": "16.0.0",
+    "babel-loader": "6.2.1",
+    "babel-plugin-rewire": "1.0.0-rc-4",
+    "babel-plugin-transform-runtime": "6.5.2",
+    "babel-preset-es2015": "6.3.13",
+    "babel-runtime": "6.6.1",
+    "babel-template": "6.6.5",
+    "bundle-loader": "0.5.4",
+    "clean-webpack-plugin": "0.1.6",
+    "html-webpack-plugin": "1.7.0",
+    "jest": "16.0.0",
+    "raw-loader": "0.5.1",
+    "redux-mock-store": "1.2.1",
+    "webpack": "1.12.12",
+    "webpack-dev-server": "1.14.1"
+  },
+  "jest": {
+    "testPathDirs": [
+      "tests"
+    ],
+    "moduleDirectories": [
+      "node_modules",
+      "app",
+      "tests"
+    ],
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "<rootDir>/node_modules/"
+    ],
+    "setupFiles": [
+      "tests/setup.js"
+    ]
+  }
+}

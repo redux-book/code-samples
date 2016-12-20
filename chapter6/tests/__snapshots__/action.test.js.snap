@@ -1,0 +1,79 @@
+exports[`actions fetch recipe should fail if recipe not found 1`] = `
+Array [
+  Object {
+    "error": true,
+    "payload": Object {
+      "status": 404,
+      "statusText": "Not found",
+    },
+    "type": "FETCH_ERROR",
+  },
+]
+`;
+
+exports[`actions fetch recipe should fetch recipe if exists 1`] = `
+Array [
+  Object {
+    "payload": Object {
+      "data": Object {
+        "title": "hello",
+      },
+      "id": 100,
+    },
+    "type": "SET_RECIPE",
+  },
+]
+`;
+
+exports[`actions should add recipe with default parameter 1`] = `
+Object {
+  "payload": "Default",
+  "type": "ADD_RECIPE",
+}
+`;
+
+exports[`actions should add recipe with default parameter 2`] = `
+Object {
+  "payload": "Default",
+  "type": "ADD_RECIPE",
+}
+`;
+
+exports[`actions should add recipe with default parameter 3`] = `
+Object {
+  "payload": "Default",
+  "type": "ADD_RECIPE",
+}
+`;
+
+exports[`actions should create an action to add a recipe with snapshot 1`] = `
+Object {
+  "payload": "test",
+  "type": "ADD_RECIPE",
+}
+`;
+
+exports[`actions should create an action to add a recipe with trimmed title 1`] = `
+Object {
+  "payload": " trimmed ",
+  "type": "ADD_RECIPE",
+}
+`;
+
+exports[`actions should create an action to delete a todo 1`] = `
+Object {
+  "payload": "test",
+  "type": "DEL_RECIPE",
+}
+`;
+
+exports[`actions should create an action to set recipes 1`] = `
+Object {
+  "payload": Array [
+    1,
+    2,
+    3,
+  ],
+  "type": "SET_RECIPES",
+}
+`;

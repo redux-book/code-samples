@@ -1,0 +1,17 @@
+exports[`api middleware error should dispatch error 1`] = `
+Array [
+  Object {
+    "error": true,
+    "payload": [Error: [object Object]],
+    "type": "API_ERROR",
+  },
+]
+`;
+
+exports[`api middleware success should dispatch API_FINISHED 1`] = `
+Array [
+  Object {
+    "type": "API_FINISHED",
+  },
+]
+`;

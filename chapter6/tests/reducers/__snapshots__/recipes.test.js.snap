@@ -1,0 +1,43 @@
+exports[`recipes reducer add action should add recipe to a non-empty list 1`] = `
+Array [
+  Object {
+    "title": "first",
+  },
+  Object {
+    "title": "test",
+  },
+]
+`;
+
+exports[`recipes reducer add action should add recipe to empty list 1`] = `
+Array [
+  Object {
+    "title": "test",
+  },
+]
+`;
+
+exports[`recipes reducer delete action should delete recipe when exists 1`] = `
+Array [
+  Object {
+    "title": "first",
+  },
+  Object {
+    "title": "third",
+  },
+]
+`;
+
+exports[`recipes reducer delete action should not delete recipe when it doesn't exist 1`] = `
+Array [
+  Object {
+    "title": "first",
+  },
+  Object {
+    "title": "second",
+  },
+  Object {
+    "title": "third",
+  },
+]
+`;
