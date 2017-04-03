@@ -2,7 +2,7 @@
 
 The official code samples for The Complete Redux Book by Ilya Gelman and Boris Dinkevich.
 
-![The Complete Redux Book Cover](https://s3.amazonaws.com/titlepages.leanpub.com/redux-book/hero?1476979937 | width=200)
+<img alt="The Complete Redux Book Cover" src="https://s3.amazonaws.com/titlepages.leanpub.com/redux-book/hero?1476979937" width="200"/>
 
 How do I manage a large state in production? Why do I need store enhancers? How do I test middleware?
 
