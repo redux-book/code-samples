@@ -4,7 +4,7 @@ const logMiddleware = ({ getState, dispatch }) => (next) => (action) => {
   next(action);
 };
 
-const URL = 'https://s3.amazonaws.com/500tech-shared/db.json';
+const URL = 'db.json';
 
 function fetchData(url, callback) {
   fetch(url)

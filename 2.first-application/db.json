@@ -1,0 +1,36 @@
+{
+  "recipes": [
+    {
+      "name": "Omelette"
+    },
+    {
+      "name": "Waffle"
+    }
+  ],
+  "ingredients": [
+    {
+      "name": "Eggs",
+      "quantity": 2,
+      "measure": "large",
+      "recipe": "Omelette"
+    },
+    {
+      "name": "Eggs",
+      "quantity": 1,
+      "measure": "large",
+      "recipe": "Waffle"
+    },
+    {
+      "name": "Milk",
+      "quantity": 1,
+      "measure": "cups",
+      "recipe": "Waffle"
+    },
+    {
+      "name": "Sugar",
+      "quantity": 2,
+      "measure": "tbsp",
+      "recipe": "Waffle"
+    }
+  ]
+}
