@@ -1,0 +1,26 @@
+[
+  {
+    "id": 10,
+    "name": "Home made cookies",
+    "author": {
+      "id": 6123,
+      "name": "The Cookie Monster"
+    }
+  },
+  {
+    "id": 11,
+    "name": "Cold sangria",
+    "author": {
+      "id": 513,
+      "name": "Elmo the Bird"
+    }
+  },
+  {
+    "id": 12,
+    "name": "Lukewarm sangria",
+    "author": {
+      "id": 513,
+      "name": "Elmo the Bird"
+    }
+  }
+]
