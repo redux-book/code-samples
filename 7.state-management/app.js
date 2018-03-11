@@ -26,11 +26,10 @@ const normalizeRecipes = data => {
   return recipes;
 };
 
-const normalizeData = data => {
-  store.dispatch({ type: 'SET_USERS', payload: normalizeUsers(data) });
-  store.dispatch({ type: 'SET_RECIPES', payload: normalizeRecipes(data) });
+const normalizeData = response => {
+  store.dispatch({ type: 'SET_USERS', payload: normalizeUsers(response.data) });
+  store.dispatch({ type: 'SET_RECIPES', payload: normalizeRecipes(response.data) });
 };
 
-fetch('server/recipes.json')
-  .then(response => response.json())
+axios.get('server/recipes.json')
   .then(normalizeData);

@@ -7,14 +7,8 @@ const logMiddleware = ({ getState, dispatch }) => (next) => (action) => {
 const URL = 'db.json';
 
 function fetchData(url, callback) {
-  fetch(url)
-    .then((response) => {
-      if (response.status !== 200) {
-        console.log(`Error fetching recipes: ${ response.status }`);
-      } else {
-        response.json().then(callback);
-      }
-    })
+  axios.get(url)
+    .then(callback)
     .catch((err) => console.log(`Error fetching recipes: ${ err }`))
 }
 

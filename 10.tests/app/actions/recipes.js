@@ -40,8 +40,7 @@ export const fetchError = error => ({
 });
 
 export const fetchRecipe = id => dispatch => {
-  return fetch('recipe/' + id)
-    .then(response => response.json())
-    .then(json => dispatch(setRecipe(id, json)))
+  return axios.get('recipe/' + id)
+    .then(response => dispatch(setRecipe(id, response.data)))
     .catch(({ status, statusText }) => dispatch(fetchError({ status, statusText })))
 };

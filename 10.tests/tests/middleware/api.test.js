@@ -1,5 +1,5 @@
 import apiMiddleware from 'middleware/api';
-import { mockFetch, mockFetchError } from 'test-utils';
+import { mockRequest, mockRequestError } from 'test-utils';
 import { API_STARTED, API_FINISHED, API, API_ERROR } from 'consts';
 
 const data = { title: 'hello' };
@@ -46,7 +46,7 @@ describe("api middleware", () => {
   });
 
   describe('success', () => {
-    beforeEach(() => mockFetch('fake.json', 200, JSON.stringify(data)));
+    beforeEach(() => mockRequest('fake.json', 200, JSON.stringify(data)));
 
     it('should dispatch API_FINISHED', () =>
       middleware(apiAction()).then(() =>
@@ -58,7 +58,7 @@ describe("api middleware", () => {
   });
 
   describe('error', () => {
-    beforeEach(() => mockFetchError('fake.json', 404, 'Not found'));
+    beforeEach(() => mockRequestError('fake.json', 404, 'Not found'));
 
     it('should NOT dispatch API_FINISHED', () =>
 
@@ -71,7 +71,7 @@ describe("api middleware", () => {
   });
 
   describe('headers', () => {
-    beforeEach(() => fetch = mockFetch('fake.json', 200, JSON.stringify(data)));
+    beforeEach(() => fetch = mockRequest('fake.json', 200, JSON.stringify(data)));
 
     it('should set access token if in state', () => {
       getState = () => ({ accessToken: 'xx11' });

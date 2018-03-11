@@ -2,7 +2,7 @@ import * as actions from 'actions/recipes';
 import { SET_RECIPE } from 'consts';
 import configureStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
-import { mockFetch, mockFetchError } from 'test-utils';
+import { mockRequest, mockRequestError } from 'test-utils';
 
 const mockStore = configureStore([ thunk ]);
 
@@ -33,14 +33,14 @@ describe('actions', () => {
     beforeEach(() => store = mockStore({}));
 
     it('should fetch recipe if exists', () => {
-      mockFetch('recipe/100', 200, '{"title":"hello"}');
+      mockRequest('recipe/100', 200, '{"title":"hello"}');
 
       return store.dispatch(actions.fetchRecipe(100))
         .then(() => expect(store.getActions()).toMatchSnapshot())
     });
 
     it('should fail if recipe not found', () => {
-      mockFetchError('recipe/100', 404, 'Not found');
+      mockRequestError('recipe/100', 404, 'Not found');
 
       return store.dispatch(actions.fetchRecipe(100))
         .then(() => expect(store.getActions()).toMatchSnapshot())

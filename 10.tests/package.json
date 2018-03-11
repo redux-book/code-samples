@@ -16,7 +16,7 @@
     "redux": "3.5.2",
     "redux-actions": "0.10.1",
     "redux-thunk": "2.1.0",
-    "whatwg-fetch": "1.0.0"
+    "axios": "0.18.0"
   },
   "devDependencies": {
     "autoprefixer": "6.3.3",

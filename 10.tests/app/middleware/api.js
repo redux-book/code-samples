@@ -17,10 +17,9 @@ const apiMiddleware = ({ dispatch, getState }) => next => action => {
 
   dispatch(apiStarted());
 
-  return fetch(url, { headers })
-    .then(response => response.json())
+  return axios.request({ url, headers })
     .then(response => {
-      dispatch(success(response));
+      dispatch(success(response.data));
       dispatch(apiFinished());
     })
     .catch(({ status, statusText }) =>
