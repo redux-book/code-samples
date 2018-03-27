@@ -27,7 +27,7 @@ const wsMiddleware = ({ dispatch }) => next => {
     },
 
     onmessage(event) {
-      const message = JSON.parse(event.data)
+      const message = JSON.parse(event.data);
 
       Object.assign(message, { meta: { fromWebsocket: true }});
 

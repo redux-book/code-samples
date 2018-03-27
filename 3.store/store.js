@@ -37,4 +37,4 @@ const onStoreChange = () => console.log(store.getState());
 const unsubscribe = store.subscribe(onStoreChange);
 
 // Unsubscribing from state changes
-// unsubscribe()
+unsubscribe();
