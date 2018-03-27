@@ -1,5 +1,5 @@
 import { handleActions } from 'redux-actions';
-import { ADD_RECIPE, DEL_RECIPE, SET_RECIPES } from 'constants.js';
+import { ADD_RECIPE, DEL_RECIPE, SET_RECIPES } from 'consts.js';
 
 const initialState = [];
 

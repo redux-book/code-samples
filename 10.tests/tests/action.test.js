@@ -1,8 +1,7 @@
 import * as actions from 'actions/recipes';
-import { SET_RECIPE } from 'consts';
 import configureStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
-import { mockRequest, mockRequestError } from 'test-utils';
+import { mockRequestError, mockRequest } from 'axios';
 
 const mockStore = configureStore([ thunk ]);
 
@@ -33,7 +32,7 @@ describe('actions', () => {
     beforeEach(() => store = mockStore({}));
 
     it('should fetch recipe if exists', () => {
-      mockRequest('recipe/100', 200, '{"title":"hello"}');
+      mockRequest('recipe/100', 200, {"title":"hello"});
 
       return store.dispatch(actions.fetchRecipe(100))
         .then(() => expect(store.getActions()).toMatchSnapshot())

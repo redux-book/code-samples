@@ -1,6 +1,5 @@
-import 'whatwg-fetch';
-import { createAction } from 'redux-actions';
 import * as actions from 'consts';
+import axios from 'axios';
 
 export const addRecipe = title => ({
   type: actions.ADD_RECIPE,

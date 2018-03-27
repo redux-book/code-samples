@@ -1,6 +1,6 @@
 import store from 'store';
 import { fetchRecipes } from 'actions/recipes';
-import { mockRequest } from 'test-utils';
+import { mockRequest } from 'axios';
 
 describe('integration', () => {
   it('should fetch recipes from server', () => {

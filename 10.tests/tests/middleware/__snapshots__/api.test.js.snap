@@ -7,11 +7,3 @@ Array [
   },
 ]
 `;
-
-exports[`api middleware success should dispatch API_FINISHED 1`] = `
-Array [
-  Object {
-    "type": "API_FINISHED",
-  },
-]
-`;

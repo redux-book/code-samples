@@ -1,6 +1,6 @@
 import apiMiddleware from 'middleware/api';
-import { mockRequest, mockRequestError } from 'test-utils';
-import { API_STARTED, API_FINISHED, API, API_ERROR } from 'consts';
+import { mockRequestError, mockRequest } from 'axios';
+import { API_STARTED, API_FINISHED, API } from 'consts';
 
 const data = { title: 'hello' };
 
@@ -18,7 +18,7 @@ const apiAction = () => ({
 });
 
 describe("api middleware", () => {
-  let next, dispatch, middleware, dispatchCalls, nextCalls, getState, fetch;
+  let next, dispatch, middleware, dispatchCalls, nextCalls, getState, axiosMock;
 
   const getStateMock = () => getState ? getState() : {};
 
@@ -41,6 +41,7 @@ describe("api middleware", () => {
   });
 
   it('should dispatch API_STARTED', () => {
+    mockRequest('fake.json', 200, JSON.stringify(data));
     middleware(apiAction());
     expect(dispatchCalls[0]).toEqual([{ type: API_STARTED }]);
   });
@@ -50,7 +51,7 @@ describe("api middleware", () => {
 
     it('should dispatch API_FINISHED', () =>
       middleware(apiAction()).then(() =>
-        expect(dispatchCalls[2]).toMatchSnapshot()));
+        expect(dispatchCalls[2]).toEqual([{ type: API_FINISHED}])));
 
     it('should dispatch SET_DATA', () =>
       middleware(apiAction()).then(() =>
@@ -71,13 +72,13 @@ describe("api middleware", () => {
   });
 
   describe('headers', () => {
-    beforeEach(() => fetch = mockRequest('fake.json', 200, JSON.stringify(data)));
+    beforeEach(() => axiosMock = mockRequest('fake.json', 200, JSON.stringify(data)));
 
     it('should set access token if in state', () => {
       getState = () => ({ accessToken: 'xx11' });
 
       return middleware(apiAction()).then(() => {
-        expect(fetch.mock.calls[0][1].headers.get('Access-Token')).toEqual('xx11')
+        expect(axiosMock.mock.calls[0][0].headers['Access-Token']).toEqual('xx11')
       });
     });
 
@@ -85,7 +86,7 @@ describe("api middleware", () => {
       getState = () => ({ });
 
       return middleware(apiAction()).then(() => {
-        expect(fetch.mock.calls[0][1].headers.get('Access-Token')).toEqual(null)
+        expect(axiosMock.mock.calls[0][0].headers['Access-Token']).toBeUndefined()
       });
     })
   });
