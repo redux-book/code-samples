@@ -1,6 +1,6 @@
-import apiMiddleware from 'middleware/api';
+import apiMiddleware from '../../app/middleware/api';
 import { mockRequestError, mockRequest } from 'axios';
-import { API_STARTED, API_FINISHED, API } from 'consts';
+import { API_STARTED, API_FINISHED, API } from '../../app/consts';
 
 const data = { title: 'hello' };
 

@@ -1,5 +1,5 @@
-import store from 'store';
-import { fetchRecipes } from 'actions/recipes';
+import store from '../app/store';
+import { fetchRecipes } from '../app/actions/recipes';
 import { mockRequest } from 'axios';
 
 describe('integration', () => {

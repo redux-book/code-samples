@@ -1,3 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`actions fetch recipe should fail if recipe not found 1`] = `
 Array [
   Object {

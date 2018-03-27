@@ -1,17 +1,9 @@
 # Redux Tests
 
-This is a collection of samples for testing redux from [The Complete
-Redux Book](http://redux-book.com)
+This is a collection of samples for testing Redux from [The Complete Redux Book](http://redux-book.com)
 
 ## Setup
-
-    npm install
-
+    yarn
 
 ## Running
-
-    npm run test:watch
-
-## License
-
-Proprietary
+    yarn test:watch

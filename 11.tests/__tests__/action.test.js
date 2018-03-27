@@ -1,4 +1,4 @@
-import * as actions from 'actions/recipes';
+import * as actions from '../app/actions/recipes';
 import configureStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import { mockRequestError, mockRequest } from 'axios';

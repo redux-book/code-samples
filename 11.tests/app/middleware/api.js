@@ -1,6 +1,6 @@
 import axios from 'axios';
-import { API } from 'consts';
-import { apiStarted, apiFinished, apiError } from 'actions/ui';
+import { API } from '../consts';
+import { apiStarted, apiFinished, apiError } from '../actions/ui';
 
 const apiMiddleware = ({ dispatch, getState }) => next => action => {
   if (action.type !== API) {

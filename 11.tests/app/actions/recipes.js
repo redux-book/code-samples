@@ -1,4 +1,4 @@
-import * as actions from 'consts';
+import * as actions from '../consts';
 import axios from 'axios';
 
 export const addRecipe = title => ({

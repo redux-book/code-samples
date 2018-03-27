@@ -1,11 +1,10 @@
-import reducer from 'reducers/recipes';
 import deepFreeze from 'deep-freeze';
-import { addRecipe, delRecipe } from 'actions/recipes';
+import reducer from '../../app/reducers/recipes';
+import { addRecipe, delRecipe } from '../../app/actions/recipes';
 
 const initialState = deepFreeze(reducer(undefined, { type: 'INIT' }));
 
 describe('recipes reducer', () => {
-
   it('should handle unknown actions', () => {
     expect(reducer(initialState, { type: 'FAKE' })).toBe(initialState);
   });

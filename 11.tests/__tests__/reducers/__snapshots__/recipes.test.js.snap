@@ -1,3 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`recipes reducer add action should add recipe to a non-empty list 1`] = `
 Array [
   Object {
